@@ -129,7 +129,7 @@ function randomBytes() {
  * }
  * ```
  */
-export type JWSAlgorithm = 'PS256' | 'ES256' | 'RS256' | 'EdDSA'
+export type JWSAlgorithm = 'PS256' | 'ES256' | 'ES384' | 'RS256' | 'EdDSA'
 
 class UnsupportedOperationError extends Error {
   constructor(message?: string) {
@@ -182,6 +182,8 @@ function esAlg(key: CryptoKey): JWSAlgorithm {
   switch ((<EcKeyAlgorithm>key.algorithm).namedCurve) {
     case 'P-256':
       return 'ES256'
+    case 'P-384':
+      return 'ES384';
     default:
       throw new UnsupportedOperationError('unsupported EcKeyAlgorithm namedCurve')
   }
