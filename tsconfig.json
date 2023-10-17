@@ -13,7 +13,6 @@
     "noImplicitAny": true,
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
-    "importsNotUsedAsValues": "error",
     "noFallthroughCasesInSwitch": true,
     "noImplicitOverride": true,
     "noImplicitReturns": true
