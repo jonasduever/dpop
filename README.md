@@ -2,6 +2,8 @@
 
 OAuth 2.0 Demonstration of Proof-of-Possession at the Application Layer - [RFC9449][].
 
+👉 Customized for the needs of a project that needs a combination of **ES384** + **SHA-384**.
+
 ## [💗 Help the project](https://github.com/sponsors/panva)
 
 ## Dependencies: 0
