@@ -31,7 +31,7 @@ function checkRsaKeyAlgorithm(algorithm: RsaKeyAlgorithm) {
 function subtleAlgorithm(key: CryptoKey): AlgorithmIdentifier | RsaPssParams | EcdsaParams {
   switch (key.algorithm.name) {
     case 'ECDSA':
-      return <EcdsaParams>{ name: key.algorithm.name, hash: 'SHA-256' }
+      return <EcdsaParams>{ name: key.algorithm.name, hash: 'SHA-384' }
     case 'RSA-PSS':
       checkRsaKeyAlgorithm(<RsaKeyAlgorithm>key.algorithm)
       return <RsaPssParams>{
