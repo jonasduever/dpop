@@ -109,7 +109,7 @@ function determineJWSAlgorithm(key) {
     }
 }
 function isCryptoKey(key) {
-    return key instanceof CryptoKey;
+    return !!key.type && !!key.algorithm;
 }
 function isPrivateKey(key) {
     return isCryptoKey(key) && key.type === 'private';

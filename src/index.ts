@@ -1,3 +1,5 @@
+// TODO: Use webcrypto instead of crypto. Or globalThis.crypto.
+
 export type JsonObject = { [Key in string]?: JsonValue }
 export type JsonArray = JsonValue[]
 export type JsonPrimitive = string | number | boolean | null
@@ -209,7 +211,7 @@ function determineJWSAlgorithm(key: CryptoKey) {
 }
 
 function isCryptoKey(key: unknown): key is CryptoKey {
-  return key instanceof CryptoKey
+  return !!(key as any).type && !!(key as any).algorithm;
 }
 
 function isPrivateKey(key: unknown): key is CryptoKey {
